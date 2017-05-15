@@ -13,6 +13,7 @@
 		0AC288BA1EC94DEB0044787C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC288B81EC94DEB0044787C /* Main.storyboard */; };
 		0AC288BC1EC94DEB0044787C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC288BB1EC94DEB0044787C /* Assets.xcassets */; };
 		0AC288BF1EC94DEB0044787C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC288BD1EC94DEB0044787C /* LaunchScreen.storyboard */; };
+		0AC288C81EC94DFF0044787C /* LineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC288C71EC94DFF0044787C /* LineView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		0AC288BB1EC94DEB0044787C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AC288BE1EC94DEB0044787C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AC288C01EC94DEB0044787C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AC288C61EC94DFF0044787C /* LineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineView.h; sourceTree = "<group>"; };
+		0AC288C71EC94DFF0044787C /* LineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 		0AC288AE1EC94DEB0044787C /* TrailEffect */ = {
 			isa = PBXGroup;
 			children = (
+				0AC288C61EC94DFF0044787C /* LineView.h */,
+				0AC288C71EC94DFF0044787C /* LineView.m */,
 				0AC288B21EC94DEB0044787C /* AppDelegate.h */,
 				0AC288B31EC94DEB0044787C /* AppDelegate.m */,
 				0AC288B51EC94DEB0044787C /* ViewController.h */,
@@ -151,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AC288C81EC94DFF0044787C /* LineView.m in Sources */,
 				0AC288B71EC94DEB0044787C /* ViewController.m in Sources */,
 				0AC288B41EC94DEB0044787C /* AppDelegate.m in Sources */,
 				0AC288B11EC94DEB0044787C /* main.m in Sources */,
