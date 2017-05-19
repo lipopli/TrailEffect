@@ -84,20 +84,28 @@
     
     
     
-    
-    if(self.points.count % 2 == 0){
-    
-        [self.points addObject:value];
-    }
+//    
+//    if(self.points.count % 2 == 0){
+//    
+//        [self.points addObject:value];
+//        
+//        
+//      //  [self.points removeObjectAtIndex:0];
+//    }
 
     
+// [self.points addObject:value];
     
-    if(self.points.count >PointsCount){
+//    
+//    if(self.points.count >PointsCount){
+//        
+//        
+//        [self.points removeObjectAtIndex:0];
+//    
+//    }
     
-     
-        [self startAnim];
+    [self startAnim];
     
-    }
     
 
 }
@@ -130,7 +138,7 @@
         
         layer.fillColor = [UIColor clearColor].CGColor ;
         
-        layer.strokeColor = [[self radomColor] colorWithAlphaComponent:_alpaF].CGColor;
+        layer.strokeColor = [[UIColor redColor] colorWithAlphaComponent:_alpaF].CGColor;
         [self.layer addSublayer:layer] ;
         layer.lineWidth = _widthF ;
 
@@ -182,52 +190,105 @@
 
 
     
-    UIBezierPath *path = [UIBezierPath bezierPath] ;
+   
     
     
-    CGPoint point = CGPointZero ;
+ //   CGPoint point = CGPointZero ;
+    
+      _alpaF = 0.5 ;
+    
+    _widthF = 5 ;
 
     for(int i = 0 ;i < self.points.count ; i++){
+        
+        _alpaF += 1.0/PointsCount ;
+        
+        _widthF += 10.0/PointsCount ;
     
         NSValue *value= [self.points objectAtIndex:i] ;
         
         CGPoint curP = [value CGPointValue] ;
         
-        if(i == 0){
+
+        UIBezierPath *path = [UIBezierPath bezierPath] ;
         
         [path moveToPoint:curP];
         [path addLineToPoint:curP];
-        }
         
         
-        if(i%3 == 0){
-        path = [UIBezierPath bezierPath] ;
-            
+        CGPoint p = CGPointZero;
+        
             
             if(i >= 1){
              NSValue *value= [self.points objectAtIndex: i - 1] ;
-                point = [value CGPointValue] ;
-            }else{
+              CGPoint  p1 = [value CGPointValue] ;
+                
+                p = p1 ;
+                
+                
+              //  [path addLineToPoint:p1];
+                
+                //取两个点的中间点
+                CGPoint midP = [self midPointWithPoint1:p1 Point2:curP] ;
+                
+                  [ path addQuadCurveToPoint:midP controlPoint:curP];
+                
+                  [ path addQuadCurveToPoint:curP controlPoint:midP];
+                
+                
+            }
+        
+        if(i >= 2){
+            NSValue *value= [self.points objectAtIndex: i - 2] ;
+            CGPoint  p2 = [value CGPointValue] ;
             
-                point = curP ;
+            
+            if(!CGPointEqualToPoint(p, CGPointZero )){
+            //取两个点的中间点
+            CGPoint midP = [self midPointWithPoint1:p2 Point2:p] ;
+            
+            [ path addQuadCurveToPoint:midP controlPoint:p];
+                
+                  [ path addQuadCurveToPoint:p2 controlPoint:midP];
+                
+               // [path addLineToPoint:p2];
             }
             
-            [path moveToPoint:point];
-            [path addLineToPoint:point];
-        }else{
-     
+            
         }
-         [path addLineToPoint:curP];
+        
+        if(i >= 3){
+        
+        
+        
+        }
+
+       // [path addLineToPoint:curP] ;
     
         CAShapeLayer *layer = [self.layers objectAtIndex:i];
 
         layer.path = path.CGPath ;
+        
+        layer.lineWidth = _widthF ;
+        
+        
+        layer.strokeColor = [[UIColor redColor] colorWithAlphaComponent:_alpaF].CGColor;
+        
+        
+        layer.opacity = _alpaF; //背景透明度
     }
     
-    [self.points removeObjectAtIndex:0];
+    if(self.points.count >20){
+    
+   [self.points removeObjectAtIndex:0];
+    }
 
 }
+#pragma mark -获取两点的中间点
 
+-(CGPoint) midPointWithPoint1:(CGPoint) p1 Point2:(CGPoint) p2{
+    return CGPointMake((p1.x + p2.x) * 0.5, (p1.y + p2.y) * 0.5);
+}
 
 -(NSMutableArray *)layers{
     
