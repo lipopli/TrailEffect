@@ -279,6 +279,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AFU3C2387Z;
 				INFOPLIST_FILE = TrailEffect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.91bdjw.TrailEffect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -291,6 +292,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AFU3C2387Z;
 				INFOPLIST_FILE = TrailEffect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.91bdjw.TrailEffect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -316,6 +318,7 @@
 				0AC288C51EC94DEB0044787C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
