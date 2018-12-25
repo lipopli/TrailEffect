@@ -40,6 +40,8 @@
     [super awakeFromNib] ;
     [self setUp ];
     
+    //测试分支提交文件
+    
 }
 -(instancetype)initWithFrame:(CGRect)frame
 {
