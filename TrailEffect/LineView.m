@@ -50,7 +50,7 @@
         
         [self setUp];
         
-        
+        //测试修改文件，测试
         
     }
     return self ;
@@ -62,6 +62,9 @@
     if(!_gradient){
     
         _gradient = [CAGradientLayer layer] ;
+        
+        
+        //哈哈哈哈
         
     }
 
